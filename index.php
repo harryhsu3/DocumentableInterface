@@ -9,7 +9,7 @@ $documentStore = new DocumentStore();
 $htmlDoc = new HtmlDocument('https://php.net');
 $documentStore->addDocument($htmlDoc);
 
-$streamDoc = new StreamDocument('./test.txt');
+$streamDoc = new StreamDocument(fopen('./test.txt', 'rb'));
 $documentStore->addDocument($streamDoc);
 
 var_dump($documentStore->getDocuments());
